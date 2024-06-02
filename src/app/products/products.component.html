@@ -1,0 +1,31 @@
+<app-header></app-header>
+    <!-- Product Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+          <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+              <p class="section-title bg-white text-center text-primary px-3">Nuestros productos</p>
+              <h1 class="mb-5">Titulo 1</h1>
+          </div>
+          <div class="row gx-4">
+              <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s" *ngFor="let product of products">
+                  <div class="product-item">
+                      <div class="position-relative">
+                          <img class="img-fluid" src="{{product.imageSrc}}" alt="">
+                          <div class="product-overlay">
+                              <!--<a class="btn btn-square btn-secondary rounded-circle m-1" href=""><i class="bi bi-link"></i></a>-->
+                              <a class="btn btn-square btn-secondary rounded-circle m-1" href="https://wa.me/573184837851?text=Hola,quisiera saber sobre el producto: {{product.name}}"><i class="bi bi-cart"></i></a>
+                          </div>
+                      </div>
+                      <div class="text-center p-4">
+                          <a class="d-block h5" href="">{{product.name}}</a>
+                          <!--<span class="text-primary me-1">{{product.price}}</span>-->
+                          <!--<span class="text-decoration-line-through">{{product.salePrice}}</span>-->
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </div>
+  <!-- Product End -->
+<app-footer></app-footer>
