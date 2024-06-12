@@ -1,0 +1,47 @@
+<!-- Botón de inicio de sesión fuera del formulario -->
+<button mat-button (click)="navigateToLoginPage()">Iniciar Sesión</button>
+
+<div class="form-container">
+  <form *ngIf="isLoginMode" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+    <!-- Contenido del formulario de inicio de sesión -->
+  </form>
+
+  <form *ngIf="!isLoginMode" [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+    <!-- Contenido del formulario de registro -->
+  </form>
+</div>
+
+
+
+
+<div class="form-container">
+  <form *ngIf="isLoginMode" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+    <mat-form-field>
+      <mat-label>Correo Electrónico</mat-label>
+      <input matInput formControlName="email" type="email">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Contraseña</mat-label>
+      <input matInput formControlName="password" type="password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Iniciar Sesión</button>
+    <button mat-button type="button" (click)="onSwitchMode()">Crear Cuenta</button>
+  </form>
+
+  <form *ngIf="!isLoginMode" [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name" type="text">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Correo Electrónico</mat-label>
+      <input matInput formControlName="email" type="email">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Contraseña</mat-label>
+      <input matInput formControlName="password" type="password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Crear Cuenta</button>
+    <button mat-button type="button" (click)="onSwitchMode()">Iniciar Sesión</button>
+  </form>
+</div>
